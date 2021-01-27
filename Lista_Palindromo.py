@@ -1,17 +1,14 @@
 text = str(input("Digite um texto: \n\n"))
 
 text = text.lower().replace(" ", "") #Trasforma a string "text" em caixa baixa e remove os espaços
-print(text)
 
-len_text = int(len(text))
-auxiliar_len_text = len(text)
-count = 0
+palindromo = text[::-1]
+print(palindromo)
 
-while count in len_text:
-    palindromo[count] = text[auxiliar_len_text]
-    auxiliar_len_text -= 1
-
-print(len_text)
+if palindromo == text:
+    print("O texto é um palíndromo!")
+else:
+    print("O texto não um palíndromo!")
 
 
 
