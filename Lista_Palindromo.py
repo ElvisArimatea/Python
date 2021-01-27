@@ -1,3 +1,13 @@
+'''
+---------------------------------------------------------------------------------------------------------------
+Neste exemplo é visto o uso do comando "text[::-1]" para inverter a STR, sendo "text" a STR.
+---------------------------------------------------------------------------------------------------------------
+
+-> Definição de Palíndromo: frase ou palavra que se pode ler, indiferentemente, da esquerda para direita ou vice-versa.
+
+'''
+
+
 text = str(input("Digite um texto: \n\n"))
 
 text = text.lower().replace(" ", "") #Trasforma a string "text" em caixa baixa e remove os espaços
