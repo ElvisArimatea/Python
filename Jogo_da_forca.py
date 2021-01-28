@@ -1,20 +1,25 @@
-palavra = str(input("Digite a palavra a ser adivinhada: "))
+palavra = str(input("Digite a palavra a ser adivinhada: ")).upper()
+forca = '_' * len(palavra)
+forca = list(forca)
+print(' '.join(forca))
 
-print('_' * len(palavra))
+resultado = '_'
+mascara = list(palavra)
+letra = ''
 
-letra = str(input("Digite uma letra: "))
-teste = palavra
-
-while letra != '0':
-    teste = teste.replace(letra, '_')
-    print(teste)
-    letra = str(input("Digite uma letra: "))
+while resultado.count('_') > 0 and letra != '0':
+    letra = str(input("Digite uma letra: ")).upper()
     
+    if mascara.count(letra) > 0:
+        aux = palavra.find(letra)
+        
+        for i in range(0, palavra.count(letra)):            
+            forca [aux] = letra            
+            aux = palavra.find(letra, aux+1)
+    
+    resultado = ' '.join(forca)
+    print(resultado)
 
-
-for i in range(len(palavra)):
-    if teste[i] != '_':
-        forca = forca + ' ' + teste[i]
-
-
+print("Parabéns! Você adivinhou a palavra:", palavra)
+    
 
