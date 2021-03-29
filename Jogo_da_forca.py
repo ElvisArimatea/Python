@@ -1,4 +1,13 @@
-palavra = str(input("Digite a palavra a ser adivinhada: ")).upper()
+from random import randrange
+
+lista_palavra = open("Palavras_forca.txt", "r")     #Abre o arquivo de palavras e o colocada na variavel "lista_palavra"
+lista_palavra = list(lista_palavra)                 #Divide as palavras em lista
+n_palavra = randrange(0, len(lista_palavra))        #Gera um número aleatório para escolher a palavra
+#print(n_palavra)
+
+palavra = lista_palavra[n_palavra].upper().strip()  #Tira espaços e coloca as letras em maiusculas
+#print(palavra)
+
 forca = '_' * len(palavra)
 forca = list(forca) #Divide cada caracter de "forca" na string, como se fosse uma lista, com posição
 print(' '.join(forca)) #Une todas as strings colocando ' ' entre elas (' '.join(forca))
